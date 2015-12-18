@@ -55,12 +55,12 @@ var projects = {
       "title": "Portfolio",
       "dates": "November 2015",
       "description": "Designed and implemented my portfolio website.",
-      "images": ["http://katharinaxeniakufieta.github.io/Portfolio/"]
+      "images": ["images/front_end/portfolio.jpg"]
     }, {
       "title": "Force estimation in robotic manipulators: Modeling, Simulation and Experiments",
-      "dates": "April 2013 - January 2014",
+      "dates": "January 2014",
       "description": "Derived and verified an accurate dynamic model for the UR5 manipulator through simulations and experiments with the robot and an accelerometer.",
-      "images": ["http://folk.ntnu.no/tomgra/Diplomer/Kufieta.pdf"]
+      "images": ["images/front_end/robot.jpg"]
     }
   ]
 }
