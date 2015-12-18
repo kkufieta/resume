@@ -14,10 +14,10 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><a class="white-text flex-item" target="_blank" href="#">%data%</a></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLbioPic = '<img src="%data%" class="biopic col-xs-4">';
+var HTMLwelcomeMsg = '<span class="welcome-message col-xs-12">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">%data%</h3><ul class="skills_" id="skills" class="flex-box"></ul>';
+var HTMLskillsStart = '<div class="col-xs-4"><h3 id="skills-h3">%data%</h3><ul id="skills" class="skills_ flex-box"></ul></div>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
@@ -27,7 +27,7 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
+var HTMLprojectStart = '<div class="project-entry col-sm-6"></div>';
 var HTMLprojectTitle = '<a class="title-text" target="_blank" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
@@ -46,7 +46,7 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div><br>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+var internationalizeButton = '<button class="col-lg-2">Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 var HTMLurlIcon = ' - <i class="fa fa-external-link"> </i>';

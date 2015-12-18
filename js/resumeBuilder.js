@@ -49,43 +49,43 @@ var projects = {
       "title": "Arcade Game Clone",
       "dates": "January 2016",
       "description": "To be announced.",
-      "images": ["images/front_end/arcade-250-1x.jpg", "images/front_end/arcade-250-1x.jpg"],
+      "images": ["images/front_end/arcade-250-1x.jpg"],
       "url": ""
     }, {
       "title": "Feed Reader Testing",
       "dates": "May 2016",
       "description": "To be announced.",
-      "images": ["images/front_end/testing-250-1x.jpg", "images/front_end/testing-250-1x.jpg"],
+      "images": ["images/front_end/testing-250-1x.jpg"],
       "url": ""
     }, {
       "title": "Health Tracker",
       "dates": "April 2016",
       "description": "To be announced.",
-      "images": ["images/front_end/kermit-250-1x.jpg", "images/front_end/kermit-250-1x.jpg"],
+      "images": ["images/front_end/kermit-250-1x.jpg"],
       "url": ""
     }, {
       "title": "Neighborhood Map",
       "dates": "March 2016",
       "description": "To be announced.",
-      "images": ["images/front_end/map-250-1x.jpg", "images/front_end/map-250-1x.jpg"],
+      "images": ["images/front_end/map-250-1x.jpg"],
       "url": ""
     }, {
       "title": "Website Optimization",
       "dates": "February 2016",
       "description": "To be announced.",
-      "images": ["images/front_end/code-screen-250-1x.jpg", "images/front_end/code-screen-250-1x.jpg"],
+      "images": ["images/front_end/code-screen-250-1x.jpg"],
       "url": ""
     }, {
       "title": "Portfolio",
       "dates": "November 2015",
       "description": "Designed and implemented my portfolio website.",
-      "images": ["images/front_end/portfolio.jpg", "images/front_end/portfolio.jpg"],
+      "images": ["images/front_end/portfolio.jpg"],
       "url": "http://katharinaxeniakufieta.github.io/Portfolio/"
     }, {
       "title": "Force estimation in robotic manipulators: Modeling, Simulation and Experiments",
       "dates": "January 2014",
       "description": "Derived and verified an accurate dynamic model for the UR5 manipulator through simulations and experiments with the robot and an accelerometer.",
-      "images": ["images/front_end/robot.jpg", "images/front_end/robot.jpg"],
+      "images": ["images/front_end/robot.jpg"],
       "url": "http://folk.ntnu.no/tomgra/Diplomer/Kufieta.pdf"
     }
   ]
@@ -209,7 +209,6 @@ bio.display = function() {
     }
   }
   $("#header").append(formattedBioPic);
-  $("#header").append(formattedWelcomeMsg);
 
   if (bio.skills === undefined || bio.skills.length === 0) {
     // don't make a skills section
@@ -230,6 +229,7 @@ bio.display = function() {
       $(".skills_:last").append(formattedSkill);
     }
   }
+  $("#header").append(formattedWelcomeMsg);
 }
 
 /*******************

@@ -24,6 +24,17 @@ h6 {
   padding: 0 5%;
 }
 
+body,
+html,
+main,
+footer {
+  margin: 0 auto; /* Centering the page */
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 h1 {
   font-size: 40px;
   color: #88c425;
@@ -58,7 +69,6 @@ h3,
 h4,
 h5 {
   padding:10px 5%;
-
 }
 
 
@@ -126,6 +136,10 @@ a:hover {
 
 .orange {
   background-color: #eafde6;
+}
+
+.white {
+  background-color: white;
 }
 
 .orange-text {
@@ -238,5 +252,16 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #workExperience {
+    position: relative;
+  }
+  #education {
+    position: absolute;
+    top: 1050px;
+    left: 50%;
   }
 }
