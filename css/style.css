@@ -260,8 +260,6 @@ span {
     position: relative;
   }
   #education {
-    position: absolute;
-    top: 1050px;
-    left: 50%;
+    top: -600px;
   }
 }
