@@ -1,7 +1,7 @@
 var attachUrlIcon = function(string, url) {
   var newString = string;
   if (url.slice(-4) === ".pdf") {
-    newString += HTMLurlIcon + " [PDF]";
+    newString += HTMLpdfIcon;
   } else {
     newString += HTMLurlIcon;
   }
