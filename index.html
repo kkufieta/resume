@@ -40,6 +40,7 @@
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
   <meta name="viewport" content="width=device-width">
 </head>
+
 <body>
   <div id="main" class="container-fluid">
     <div id="header" class="center-content clear-fix col-lg-12">
@@ -59,7 +60,7 @@
     </div>
     <div id="lets-connect" class="white col-lg-12">
       <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="dark-gray flex-box">
+      <ul id="footerContacts" class="dark-gray flex-box">
       </ul>
     </div>
   </div>
@@ -69,27 +70,28 @@
 
 
   <script type="text/javascript">
-    if(document.getElementsByClassName('flex-item').length === 0) {
+    if (document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('topContacts').style.backgroundColor = "black";
     }
-    if(document.getElementsByTagName('h1').length === 0) {
+    if (document.getElementsByTagName('h1').length === 0) {
       document.getElementById('header').style.backgroundColor = "black";
     }
-    if(document.getElementsByClassName('work-entry').length === 0) {
+    if (document.getElementsByClassName('work-entry').length === 0) {
       document.getElementById('workExperience').style.backgroundColor = "black";
     }
-    if(document.getElementsByClassName('project-entry').length === 0) {
+    if (document.getElementsByClassName('project-entry').length === 0) {
       document.getElementById('projects').style.backgroundColor = "black";
     }
-    if(document.getElementsByClassName('education-entry').length === 0) {
+    if (document.getElementsByClassName('education-entry').length === 0) {
       document.getElementById('education').style.backgroundColor = "black";
     }
-    if(document.getElementsByClassName('flex-item').length === 0) {
+    if (document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('lets-connect').style.backgroundColor = "black";
     }
-    if(document.getElementById('map') === null) {
+    if (document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.backgroundColor = "black";
     }
   </script>
 </body>
+
 </html>

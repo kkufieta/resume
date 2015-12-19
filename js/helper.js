@@ -126,13 +126,17 @@ function initializeMap() {
     // iterates through school locations and appends each location to
     // the locations array
     for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+      if (education.schools.hasOwnProperty(school)) {
+        locations.push(education.schools[school].location);
+      }
     }
 
     // iterates through work locations and appends each location to
     // the locations array
     for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
+      if (work.jobs.hasOwnProperty(job)) {
+        locations.push(work.jobs[job].location);
+      }
     }
 
     return locations;
@@ -202,15 +206,16 @@ function initializeMap() {
 
     // Iterates through the array of locations, creates a search object for each location
     for (var place in locations) {
+      if (locations.hasOwnProperty(place)) {
+        // the search request object
+        var request = {
+          query: locations[place]
+        };
 
-      // the search request object
-      var request = {
-        query: locations[place]
-      };
-
-      // Actually searches the Google Maps API for location data and runs the callback
-      // function with the search results after each search.
-      service.textSearch(request, callback);
+        // Actually searches the Google Maps API for location data and runs the callback
+        // function with the search results after each search.
+        service.textSearch(request, callback);
+      }
     }
   }
 

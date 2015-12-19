@@ -50,7 +50,7 @@ var work = {
  ** Work Display  **
  *******************/
 work.display = function() {
-  for (jobs in work) {
+  for (var jobs in work) {
     if (work.hasOwnProperty(jobs) && work[jobs].length > 0) {
       for (var i = 0; i < work[jobs].length; i++) {
         $('#workExperience').append(HTMLworkStart);
@@ -146,7 +146,7 @@ var projects = {
  ** Projects Display **
  **********************/
 projects.display = function() {
-  for (project in projects) {
+  for (var project in projects) {
     if (projects.hasOwnProperty(project) && projects[project].length > 0) {
       for (var i = 0; i < projects[project].length; i++) {
         $('#projects').append(HTMLprojectStart);
@@ -357,16 +357,16 @@ education.display = function() {
   }
   if (education.hasOwnProperty('onlineCourses') && education.onlineCourses.length > 0) {
     $('#education').append(HTMLonlineClasses);
-    for (i = 0; i < education.onlineCourses.length; i++) {
+    for (var k = 0; k < education.onlineCourses.length; k++) {
       formattedTitle = HTMLonlineTitle.replace('%data%',
-        education.onlineCourses[i].title);
-      formattedTitle = formattedTitle.replace('#', education.onlineCourses[i].url);
-      formattedDegree = attachUrlIcon(education.onlineCourses[i].school,
-        education.onlineCourses[i].url);
+        education.onlineCourses[k].title);
+      formattedTitle = formattedTitle.replace('#', education.onlineCourses[k].url);
+      formattedDegree = attachUrlIcon(education.onlineCourses[k].school,
+        education.onlineCourses[k].url);
       formattedSchool = HTMLonlineSchool.replace('%data%',
-        education.onlineCourses[i].school + HTMLurlIcon);
+        education.onlineCourses[k].school + HTMLurlIcon);
       formattedDates = HTMLonlineDates.replace('%data%',
-        education.onlineCourses[i].date);
+        education.onlineCourses[k].date);
 
       $('#education').append(HTMLschoolStart);
       $('.education-entry:last').append(formattedTitle + formattedSchool);
