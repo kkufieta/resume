@@ -3,21 +3,22 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span class="white-text">%data%</span><hr/>';
+var HTMLheaderRole = '<span class="white-text">%data%</span>';
 
+var HTMLcontactStart = '<ul id="topContacts" class="flex-box col-xs-12"></ul>';
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><a class="white-text flex-item" target="_blank" href="#">%data%</a></li>';
-var HTMLlinkedin = '<li class="flex-item"><span class="orange-text">linkedin</span><a class="white-text flex-item" target="_blank" href="#">%data%</a></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><a class="white-text flex-item" target="_blank" href="#">%data%</a></li>';
+var HTMLmobile = '<li class="flex-item"><span class="orange-text"><i class="fa fa-mobile fa-2x"></i></span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="orange-text"><i class="fa fa-envelope fa-2x"></i></span><span class="white-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="orange-text"><i class="fa fa-twitter fa-2x"></i></span><a class="white-text flex-item" target="_blank" href="#">%data%</a></li>';
+var HTMLlinkedin = '<li class="flex-item"><span class="orange-text"><i class="fa fa-linkedin-square fa-2x"></i></span><a class="white-text flex-item" target="_blank" href="#">%data%</a></li>';
+var HTMLgithub = '<li class="flex-item"><span class="orange-text"><i class="fa fa-github fa-2x"></i></span><a class="white-text flex-item" target="_blank" href="#">%data%</a></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><a class="white-text flex-item" target="_blank" href="#">%data%</a></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><span class="orange-text"><i class="fa fa-map-marker fa-2x"></i></span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic col-xs-4">';
+var HTMLbioPic = '<img src="%data%" class="biopic col-sm-4">';
 var HTMLwelcomeMsg = '<span class="welcome-message col-xs-12">%data%</span>';
 
-var HTMLskillsStart = '<div class="col-xs-4"><h3 id="skills-h3">%data%</h3><ul id="skills" class="skills_ flex-box"></ul></div>';
+var HTMLskillsStart = '<div class="col-xs-6 col-sm-4"><h3 id="skills-h3">%data%</h3><ul id="skills" class="skills_ flex-box"></ul></div>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
@@ -46,7 +47,7 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div><br>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button class="col-lg-2">Internationalize</button>';
+var internationalizeButton = '<button id="button" class="col-lg-2">Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 var HTMLurlIcon = ' - <i class="fa fa-external-link"> </i>';

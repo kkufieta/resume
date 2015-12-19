@@ -37,7 +37,8 @@ footer {
 
 h1 {
   font-size: 40px;
-  color: #88c425;
+  /* color: #88c425;*/
+  color: #256EAD;
   line-height: 48px;
   display: inline;
 }
@@ -45,15 +46,16 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  /* color: #999; */
+  color: #256ead;
   line-height: 29px;
   padding: 10px;
 }
 
 h3 {
-  font-style: italic;
   font-size: 20px;
-  color: #555;
+  /* color: #555;*/
+  color: #256ead;
   line-height: 22px;
 }
 
@@ -129,9 +131,9 @@ a:hover {
 }
 
 #skills-h3 {
-  background-color: #1b676b;
   display: none;
-  color: #88c425;
+  color: #256ead;
+  text-align: left;
 }
 
 .orange {
@@ -143,16 +145,19 @@ a:hover {
 }
 
 .orange-text {
-  color: #88c425;
+  color: #256ead;
 }
+
 
 .white-text {
   font-weight: bold;
   color: #eafde6;
+  text-align: left;
 }
 
 .title-text {
   color: #88c425;
+  font-size: 16px;
 }
 
 .gray {
@@ -162,12 +167,12 @@ a:hover {
 }
 
 .dark-gray {
-  background-color: #1b676b;
+  background-color: #408fbf;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #1b676b;
+  background-color: #408fbf;
 }
 
 .flex-box {
@@ -194,12 +199,14 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  margin-left: 50px;
+  max-width: 200px;
   display: none;
 }
 
 img {
-  padding: 10px;
+  margin: 0 auto; /* Centering the page */
+  padding: 0;
 }
 
 span {
@@ -220,7 +227,7 @@ span {
 
 @media only screen and (max-width:900px) {
   .biopic {
-    width: 175px;
+    max-width: 175px;
   }
 }
 
@@ -229,7 +236,7 @@ span {
     margin-top: 10%;
   }
   .biopic {
-    width: 150px;
+    max-width: 150px;
   }
   .welcome-message {
     display: none;
@@ -260,6 +267,11 @@ span {
     position: relative;
   }
   #education {
-    top: -600px;
+    top: -400px;
+  }
+  #mapDiv,
+  #lets-connect,
+  #button {
+    top: -200px;
   }
 }

@@ -163,11 +163,33 @@ bio.display = function() {
 
   $("#header").prepend(formattedHeaderRole);
   $("#header").prepend(formattedHeaderName);
+  $("#header").append(formattedWelcomeMsg);
 
+  if (bio.skills === undefined || bio.skills.length === 0) {
+    // don't make a skills section
+  } else {
+    // make a skills section
+    // Frontend skills
+    formattedSkillsStart = HTMLskillsStart.replace("%data%", "Frontend Skills");
+    $("#header").append(formattedSkillsStart);
+    for (var i = 0; i < bio.skills.frontend.length; i++) {
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills.frontend[i]);
+      $(".skills_:last").append(formattedSkill);
+    }
+    // Other skills
+    formattedSkillsStart = HTMLskillsStart.replace("%data%", "Other Skills");
+    $("#header").append(formattedSkillsStart);
+    for (var i = 0; i < bio.skills.other.length; i++) {
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills.other[i]);
+      $(".skills_:last").append(formattedSkill);
+    }
+  }
+  $("#header").append(formattedBioPic);
   if (bio.contacts === undefined || bio.contacts.length === 0) {
     // don't make a contacts section
   } else {
     // make a contacts section
+    $("#header").append(HTMLcontactStart);
     if (bio.contacts.mobile !== undefined) {
       formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
       $("#topContacts").append(formattedMobile);
@@ -179,19 +201,19 @@ bio.display = function() {
       $("#footerContacts").append(formattedEmail);
     }
     if (bio.contacts.twitter !== undefined) {
-      formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+      formattedTwitter = HTMLtwitter.replace("%data%", "Twitter");
       formattedTwitter = formattedTwitter.replace("#", bio.contacts.twitter);
       $("#topContacts").append(formattedTwitter);
       $("#footerContacts").append(formattedTwitter);
     }
     if (bio.contacts.linkedin !== undefined) {
-      formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
+      formattedLinkedin = HTMLlinkedin.replace("%data%", "LinkedIn");
       formattedLinkedin = formattedLinkedin.replace("#", bio.contacts.linkedin);
       $("#topContacts").append(formattedLinkedin);
       $("#footerContacts").append(formattedLinkedin);
     }
     if (bio.contacts.github !== undefined) {
-      formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+      formattedGithub = HTMLgithub.replace("%data%", "Github");
       formattedGithub = formattedGithub.replace("#", bio.contacts.github);
       $("#topContacts").append(formattedGithub);
       $("#footerContacts").append(formattedGithub);
@@ -208,28 +230,7 @@ bio.display = function() {
       $("#footerContacts").append(formattedLocation);
     }
   }
-  $("#header").append(formattedBioPic);
 
-  if (bio.skills === undefined || bio.skills.length === 0) {
-    // don't make a skills section
-  } else {
-    // make a skills section
-    // Frontend skills
-    formattedSkillsStart = HTMLskillsStart.replace("%data%", "Skills: Frontend");
-    $("#header").append(formattedSkillsStart);
-    for (var i = 0; i < bio.skills.frontend.length; i++) {
-      var formattedSkill = HTMLskills.replace("%data%", bio.skills.frontend[i]);
-      $(".skills_:last").append(formattedSkill);
-    }
-    // Other skills
-    formattedSkillsStart = HTMLskillsStart.replace("%data%", "Skills: Other");
-    $("#header").append(formattedSkillsStart);
-    for (var i = 0; i < bio.skills.other.length; i++) {
-      var formattedSkill = HTMLskills.replace("%data%", bio.skills.other[i]);
-      $(".skills_:last").append(formattedSkill);
-    }
-  }
-  $("#header").append(formattedWelcomeMsg);
 }
 
 /*******************
