@@ -1,3 +1,6 @@
+/***********
+ ** Work  **
+ ***********/
 var work = {
   'jobs': [
     {
@@ -43,8 +46,54 @@ var work = {
   ]
 };
 
+/*******************
+ ** Work Display  **
+ *******************/
+work.display = function() {
+  for (jobs in work) {
+    if (work.hasOwnProperty(jobs) && work[jobs].length > 0) {
+      for (var i = 0; i < work[jobs].length; i++) {
+        $('#workExperience').append(HTMLworkStart);
+        if (work[jobs][i].employer !== undefined && work[jobs][i].title !== undefined &&
+             work[jobs][i].employer !== '' && work[jobs][i].title !== '') {
+            if (work[jobs][i].url !== undefined && work[jobs][i].url !== '') {
+              formattedEmployer = HTMLworkEmployer.replace('%data%', work[jobs][i].employer);
+              formattedEmployer = formattedEmployer.replace('#', work[jobs][i].url);
+              formattedTitleUrl = attachUrlIcon(work[jobs][i].title,
+                work[jobs][i].url);
+              formattedTitle = HTMLworkTitle.replace('%data%',
+                formattedTitleUrl);
+            } else {
+              formattedEmployer = HTMLworkEmployer.replace('%data%', work[jobs][i].employer);
+              formattedEmployer = formattedEmployer.replace('<a', '<p');
+              formattedTitle = HTMLworkTitle.replace('%data%', work[jobs][i].title);
+              formattedTitle = formattedTitle.replace('</a>', '</p>');
+            }
+            $('.work-entry:last').append(formattedEmployer + formattedTitle);
+        }
+
+        if (work[jobs][i].dates !== undefined && work[jobs][i].dates !== '') {
+          formattedDates = HTMLworkDates.replace('%data%', work[jobs][i].dates);
+          $('.work-entry:last').append(formattedDates);
+        }
+        if (work[jobs][i].location !== undefined && work[jobs][i].location !== '') {
+          formattedLocation = HTMLworkLocation.replace('%data%', work[jobs][i].location);
+          $('.work-entry:last').append(formattedLocation);
+        }
+        if (work[jobs][i].description !== undefined && work[jobs][i].description !== '') {
+          formattedDescription = HTMLworkDescription.replace('%data%', work[jobs][i].description);
+          $('.work-entry:last').append(formattedDescription);
+        }
+      }
+    }
+  }
+};
+
+/**************
+ ** Projects **
+ **************/
 var projects = {
-  'project': [
+  'projects': [
     {
       'title': 'Arcade Game Clone',
       'dates': 'January 2016',
@@ -93,186 +142,9 @@ var projects = {
   ]
 };
 
-var bio = {
-  'name': 'Katharina Kufieta',
-  'role': 'Software Engineer',
-  'contacts': {
-    'github': 'https://github.com/KatharinaXeniaKufieta',
-    'linkedin': 'https://www.linkedin.com/in/katharinakufieta',
-    'location': 'New York City'
-    },
-  'welcomeMessage': 'When in doubt, break boundaries.',
-  'skills': {
-    'frontend': [
-      'HTML', 'CSS', 'Bootstrap', 'JavaScript', 'JQuery'
-      ],
-    'other': [
-      'Matlab', 'Simulink', 'R', 'C++', 'Python', 'Squirrel', 'Kivy', 'Bash', 'Git', 'Arduino Uno', 'Electric Imp'
-      ]
-  },
-  'bioPic': 'images/me2.jpg'
-};
-
-var education = {
-  'schools': [
-    {
-      'name': 'University of Stuttgart',
-      'location': 'Stuttgart, Germany',
-      'degree': 'Diplom Engineer (equivalent to MSc)',
-      'major': 'Control Systems Engineering',
-      'dates': 2014,
-      'url': 'https://www.uni-stuttgart.de/studieren/angebot/studiengang/Technische_Kybernetik_M.Sc./?__locale=en'
-    }, {
-      'name': 'Norwegian University of Science and Technology',
-      'location': 'Trondheim, Norway',
-      'degree': 'Exchange student',
-      'major': 'Control Systems Engineering',
-      'dates': 2014,
-      'url': 'http://www.ntnu.no/studier/mttk/'
-    }
-  ],
-  'onlineCourses': [
-    {
-      'title': 'Front-End Web Developer Nanodegree',
-      'school': 'Udacity',
-      'dates': 2015,
-      'url': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
-    },
-    {
-      'title': 'Learning How to Learn: Powerful mental tools to help you master tough subjects',
-      'school': 'Coursera',
-      'dates': 2015,
-      'url': 'https://www.coursera.org/learn/learning-how-to-learn'
-    },
-    {
-      'title': 'Control of Mobile Robots',
-      'school': 'Coursera',
-      'dates': 2014,
-      'url': 'https://www.coursera.org/course/conrob'
-    }
-  ]
-};
-
-/****************************
- ** Append bio information **
- ****************************/
-bio.display = function() {
-  var formattedHeaderName = HTMLheaderName.replace('%data%', bio.name);
-  var formattedHeaderRole = HTMLheaderRole.replace('%data%', bio.role);
-
-  var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
-  var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
-
-  $('#header').prepend(formattedHeaderRole);
-  $('#header').prepend(formattedHeaderName);
-  $('#header').append(formattedWelcomeMsg);
-
-  if (bio.skills !== undefined && bio.skills.length !== 0) {
-    // Frontend skills
-    formattedSkillsStart = HTMLskillsStart.replace('%data%', 'Frontend Skills');
-    $('#header').append(formattedSkillsStart);
-    for (var i = 0; i < bio.skills.frontend.length; i++) {
-      var formattedSkill = HTMLskills.replace('%data%', bio.skills.frontend[i]);
-      $('.skills_:last').append(formattedSkill);
-    }
-    // Other skills
-    formattedSkillsStart = HTMLskillsStart.replace('%data%', 'Other Skills');
-    $('#header').append(formattedSkillsStart);
-    for (i = 0; i < bio.skills.other.length; i++) {
-      formattedSkill = HTMLskills.replace('%data%', bio.skills.other[i]);
-      $('.skills_:last').append(formattedSkill);
-    }
-  }
-  $('#header').append(formattedBioPic);
-  if (bio.contacts !== undefined || bio.contacts.length !== 0) {
-    $('#header').append(HTMLcontactStart);
-    if (bio.contacts.mobile !== undefined) {
-      formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-      $('#topContacts').append(formattedMobile);
-      $('#footerContacts').append(formattedMobile);
-    }
-    if (bio.contacts.email !== undefined) {
-      formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-      $('#topContacts').append(formattedEmail);
-      $('#footerContacts').append(formattedEmail);
-    }
-    if (bio.contacts.twitter !== undefined) {
-      formattedTwitter = HTMLtwitter.replace('%data%', 'Twitter');
-      formattedTwitter = formattedTwitter.replace('#', bio.contacts.twitter);
-      $('#topContacts').append(formattedTwitter);
-      $('#footerContacts').append(formattedTwitter);
-    }
-    if (bio.contacts.linkedin !== undefined) {
-      formattedLinkedin = HTMLlinkedin.replace('%data%', 'LinkedIn');
-      formattedLinkedin = formattedLinkedin.replace('#', bio.contacts.linkedin);
-      $('#topContacts').append(formattedLinkedin);
-      $('#footerContacts').append(formattedLinkedin);
-    }
-    if (bio.contacts.github !== undefined) {
-      formattedGithub = HTMLgithub.replace('%data%', 'Github');
-      formattedGithub = formattedGithub.replace('#', bio.contacts.github);
-      $('#topContacts').append(formattedGithub);
-      $('#footerContacts').append(formattedGithub);
-    }
-    if (bio.contacts.blog !== undefined) {
-      formattedBlog = HTMLblog.replace('%data%', bio.contacts.blog);
-      formattedBlog = formattedBlog.replace('#', bio.contacts.blog);
-      $('#topContacts').append(formattedBlog);
-      $('#footerContacts').append(formattedBlog);
-    }
-    if (bio.contacts.location !== undefined) {
-      formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
-      $('#topContacts').append(formattedLocation);
-      $('#footerContacts').append(formattedLocation);
-    }
-  }
-};
-
-/*******************
- ** Append work **
- *******************/
-work.display = function() {
-  for (jobs in work) {
-    if (work.hasOwnProperty(jobs) && work[jobs].length > 0) {
-      for (var i = 0; i < work[jobs].length; i++) {
-        $('#workExperience').append(HTMLworkStart);
-        if (work[jobs][i].employer !== undefined && work[jobs][i].title !== undefined) {
-            if (work[jobs][i].url !== undefined && work[jobs][i].url !== '') {
-              formattedEmployer = HTMLworkEmployer.replace('%data%', work[jobs][i].employer);
-              formattedEmployer = formattedEmployer.replace('#', work[jobs][i].url);
-              formattedTitleUrl = attachUrlIcon(work[jobs][i].title,
-                work[jobs][i].url);
-              formattedTitle = HTMLworkTitle.replace('%data%',
-                formattedTitleUrl);
-            } else {
-              formattedEmployer = HTMLworkEmployer.replace('%data%', work[jobs][i].employer);
-              formattedEmployer = formattedEmployer.replace('<a', '<p');
-              formattedTitle = HTMLworkTitle.replace('%data%', work[jobs][i].title);
-              formattedTitle = formattedTitle.replace('</a>', '</p>');
-            }
-            $('.work-entry:last').append(formattedEmployer + formattedTitle);
-        }
-
-        if (work[jobs][i].dates !== undefined) {
-          formattedDates = HTMLworkDates.replace('%data%', work[jobs][i].dates);
-          $('.work-entry:last').append(formattedDates);
-        }
-        if (work[jobs][i].location !== undefined) {
-          formattedLocation = HTMLworkLocation.replace('%data%', work[jobs][i].location);
-          $('.work-entry:last').append(formattedLocation);
-        }
-        if (work[jobs][i].description !== undefined) {
-          formattedDescription = HTMLworkDescription.replace('%data%', work[jobs][i].description);
-          $('.work-entry:last').append(formattedDescription);
-        }
-      }
-    }
-  }
-};
-
-/*********************
- ** Append projects **
- *********************/
+/**********************
+ ** Projects Display **
+ **********************/
 projects.display = function() {
   for (project in projects) {
     if (projects.hasOwnProperty(project) && projects[project].length > 0) {
@@ -314,9 +186,142 @@ projects.display = function() {
   }
 };
 
-/**********************
- ** Append education **
- **********************/
+/*********
+ ** Bio **
+ ********/
+var bio = {
+  'name': 'Katharina Kufieta',
+  'role': 'Software Engineer',
+  'contacts': {
+    'mobile': '999-999-9999',
+    'email': 'notarealemail@gmail.com',
+    'github': 'https://github.com/KatharinaXeniaKufieta',
+    'twitter': 'https://twitter.com/kathikufieta',
+    'location': 'New York City',
+    'linkedin': 'https://www.linkedin.com/in/katharinakufieta',
+    'blog': ''
+    },
+  'welcomeMessage': 'When in doubt, break boundaries.',
+  'skills': [
+    'HTML', 'CSS', 'Bootstrap', 'JavaScript', 'JQuery', 'Matlab', 'Simulink', 'R', 'C++', 'Python', 'Squirrel', 'Kivy', 'Bash', 'Git', 'Arduino Uno', 'Electric Imp'
+  ],
+  'biopic': 'images/me2.jpg'
+};
+
+/*****************
+ ** Bio Display **
+ ****************/
+bio.display = function() {
+  var formattedHeaderName = HTMLheaderName.replace('%data%', bio.name);
+  var formattedHeaderRole = HTMLheaderRole.replace('%data%', bio.role);
+
+  var formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
+  var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
+
+  $('#header').prepend(formattedHeaderRole);
+  $('#header').prepend(formattedHeaderName);
+  $('#header').append(formattedWelcomeMsg);
+
+  if (bio.skills !== undefined && bio.skills.length !== 0) {
+    formattedSkillsStart = HTMLskillsStart.replace('%data%', 'Skills');
+    $('#header').append(formattedSkillsStart);
+    for (var i = 0; i < bio.skills.length; i++) {
+      var formattedSkill = HTMLskills.replace('%data%', bio.skills[i]);
+      $('.skills_:last').append(formattedSkill);
+    }
+  }
+  $('#header').append(formattedBioPic);
+  if (bio.contacts !== undefined || bio.contacts.length !== 0) {
+    $('#header').append(HTMLcontactStart);
+    if (bio.contacts.mobile !== undefined && bio.contacts.mobile !== '') {
+      formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+      $('#topContacts').append(formattedMobile);
+      $('#footerContacts').append(formattedMobile);
+    }
+    if (bio.contacts.email !== undefined && bio.contacts.email !== '') {
+      formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+      $('#topContacts').append(formattedEmail);
+      $('#footerContacts').append(formattedEmail);
+    }
+    if (bio.contacts.twitter !== undefined && bio.contacts.twitter !== '') {
+      formattedTwitter = HTMLtwitter.replace('%data%', 'Twitter');
+      formattedTwitter = formattedTwitter.replace('#', bio.contacts.twitter);
+      $('#topContacts').append(formattedTwitter);
+      $('#footerContacts').append(formattedTwitter);
+    }
+    if (bio.contacts.linkedin !== undefined && bio.contacts.linkedin !== '') {
+      formattedLinkedin = HTMLlinkedin.replace('%data%', 'LinkedIn');
+      formattedLinkedin = formattedLinkedin.replace('#', bio.contacts.linkedin);
+      $('#topContacts').append(formattedLinkedin);
+      $('#footerContacts').append(formattedLinkedin);
+    }
+    if (bio.contacts.github !== undefined && bio.contacts.github !== '') {
+      formattedGithub = HTMLgithub.replace('%data%', 'Github');
+      formattedGithub = formattedGithub.replace('#', bio.contacts.github);
+      $('#topContacts').append(formattedGithub);
+      $('#footerContacts').append(formattedGithub);
+    }
+    if (bio.contacts.blog !== undefined && bio.contacts.blog !== '') {
+      formattedBlog = HTMLblog.replace('%data%', bio.contacts.blog);
+      formattedBlog = formattedBlog.replace('#', bio.contacts.blog);
+      $('#topContacts').append(formattedBlog);
+      $('#footerContacts').append(formattedBlog);
+    }
+    if (bio.contacts.location !== undefined && bio.contacts.location !== '') {
+      formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+      $('#topContacts').append(formattedLocation);
+      $('#footerContacts').append(formattedLocation);
+    }
+  }
+};
+
+/***************
+ ** Education **
+ ***************/
+var education = {
+  'schools': [
+    {
+      'name': 'University of Stuttgart',
+      'location': 'Stuttgart, Germany',
+      'degree': 'Diplom Engineer (equivalent to MSc)',
+      'majors': ['Control Systems Engineering'],
+      'dates': 2014,
+      'url': 'https://www.uni-stuttgart.de/studieren/angebot/studiengang/Technische_Kybernetik_M.Sc./?__locale=en'
+    }, {
+      'name': 'Norwegian University of Science and Technology',
+      'location': 'Trondheim, Norway',
+      'degree': 'Exchange student',
+      'majors': ['Control Systems Engineering', 'Unicorn Science'],
+      'dates': 2014,
+      'url': 'http://www.ntnu.no/studier/mttk/'
+    }
+  ],
+  'onlineCourses': [
+    {
+      'title': 'Front-End Web Developer Nanodegree',
+      'school': 'Udacity',
+      'date': 2015,
+      'url': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
+    },
+    {
+      'title': 'Learning How to Learn: Powerful mental tools to help you master tough subjects',
+      'school': 'Coursera',
+      'date': 2015,
+      'url': 'https://www.coursera.org/learn/learning-how-to-learn'
+    },
+    {
+      'title': 'Control of Mobile Robots',
+      'school': 'Coursera',
+      'date': 2014,
+      'url': 'https://www.coursera.org/course/conrob'
+    }
+  ]
+};
+
+
+/***********************
+ ** Education Display **
+ ***********************/
 education.display = function() {
   if (education.hasOwnProperty('schools') && education.schools.length > 0) {
     for (var i = 0; i < education.schools.length; i++) {
@@ -341,11 +346,13 @@ education.display = function() {
         education.schools[i].dates);
       formattedSchoolLocation = HTMLschoolLocation.replace('%data%',
         education.schools[i].location);
-      formattedSchoolMajor = HTMLschoolMajor.replace('%data%',
-        education.schools[i].major);
       $('.education-entry:last').append(formattedSchoolDates);
       $('.education-entry:last').append(formattedSchoolLocation);
-      $('.education-entry:last').append(formattedSchoolMajor);
+      for (var j = 0; j < education.schools[i].majors.length; j++) {
+        formattedSchoolMajor = HTMLschoolMajor.replace('%data%',
+          education.schools[i].majors[j]);
+        $('.education-entry:last').append(formattedSchoolMajor);
+      }
     }
   }
   if (education.hasOwnProperty('onlineCourses') && education.onlineCourses.length > 0) {
@@ -359,7 +366,7 @@ education.display = function() {
       formattedSchool = HTMLonlineSchool.replace('%data%',
         education.onlineCourses[i].school + HTMLurlIcon);
       formattedDates = HTMLonlineDates.replace('%data%',
-        education.onlineCourses[i].dates);
+        education.onlineCourses[i].date);
 
       $('#education').append(HTMLschoolStart);
       $('.education-entry:last').append(formattedTitle + formattedSchool);
@@ -371,14 +378,14 @@ education.display = function() {
 /************************
  ** Log clicks on page **
  ************************/
-var clickingLikeCrazy = function(loc) {
+var logClicksFcn = function(loc) {
   console.log(loc);
   console.log(loc.pageX);
   console.log(loc.pageY);
   logClicks(loc.pageX, loc.pageY);
 };
 
-$(document).click(clickingLikeCrazy);
+$(document).click(logClicksFcn);
 
 $('#main').append(internationalizeButton);
 
