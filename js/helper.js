@@ -33,7 +33,7 @@ var HTMLprojectTitle = '<a class="title-text" target="_blank" href="#">%data%</a
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
-var HTMLprojectYoutube = '<google-youtube video-id=\"%data%\" height=\"270px\" width=\"480px\" rel=\"0\" start=\"5\" autoplay=\"0\"> </google-youtube>'
+var HTMLprojectYoutube = '<google-youtube video-id="%data%" height="270px" width="480px" rel="0" start="5" autoplay="0"> </google-youtube>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a class="title-text" target="_blank" href="#">%data%';
@@ -55,12 +55,12 @@ var HTMLurlIcon = ' - <i class="fa fa-external-link"> </i>';
 var HTMLpdfIcon = ' - <i class="fa fa-file-pdf-o"></i>';
 
 /*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
+The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. It hooks up your code to the button you'll be appending.
 */
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName() || function(){};
-    $('#name').html(iName);  
+    $('#name').html(iName);
   });
 });
 
@@ -104,9 +104,9 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  /* 
+  /*
   For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js. 
+  appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
