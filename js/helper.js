@@ -33,7 +33,7 @@ var HTMLprojectTitle = '<a class="title-text" target="_blank" href="#">%data%</a
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
-var HTMLprojectYoutube = '<google-youtube video-id="%data%" height="270px" width="480px" rel="0" start="5" autoplay="0"> </google-youtube>';
+var HTMLprojectYoutube = '<google-youtube video-id="%data%" height="270px" width="480px" rel="0" start="5" fluid="true" autoplay="0"> </google-youtube>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a class="title-text" target="_blank" href="#">%data%';
