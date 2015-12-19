@@ -50,7 +50,8 @@ var projects = {
       "dates": "January 2016",
       "description": "To be announced.",
       "images": ["images/front_end/arcade-250-1x.jpg"],
-      "url": ""
+      "url": "",
+      "youtube": "7Q9ljEXsW7w"
     }, {
       "title": "Feed Reader Testing",
       "dates": "May 2016",
@@ -86,7 +87,8 @@ var projects = {
       "dates": "January 2014",
       "description": "Derived and verified an accurate dynamic model for the UR5 manipulator through simulations and experiments with the robot and an accelerometer.",
       "images": ["images/front_end/robot.jpg"],
-      "url": "http://folk.ntnu.no/tomgra/Diplomer/Kufieta.pdf"
+      "url": "http://folk.ntnu.no/tomgra/Diplomer/Kufieta.pdf",
+      "youtube": "EeSUPTAz2MM"
     }
   ]
 }
@@ -310,10 +312,17 @@ projects.display = function() {
             HTMLprojectImage.replace("%data%", projects[project][i].images[j]);
           $(".project-entry:last").append(formattedImage);
         }
+        if (projects[project][i].youtube !== undefined && projects[project][i].youtube !== "") {
+          formattedYoutube = HTMLprojectYoutube.replace("%data%", projects[project][i].youtube);
+          $(".project-entry:last").append(formattedYoutube);
+        }
       }
     }
   }
 }
+
+
+
 
 /**********************
  ** Append education **
