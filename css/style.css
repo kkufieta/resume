@@ -19,9 +19,12 @@ h6 {
 }
 
 .education-entry,
-.work-entry,
-.project-entry {
+.work-entry {
   padding: 0 5%;
+}
+
+.project-entry {
+  padding: 2% 5%;
 }
 
 body,
@@ -34,6 +37,7 @@ footer {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  background-color: #74caff;
 }
 
 h1 {
@@ -74,7 +78,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #696969;
   line-height: 16px;
   float: left;
 }
@@ -82,7 +86,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #696969;
   line-height: 16px;
   float: right;
 }
@@ -113,7 +117,7 @@ a {
 }
 
 a:hover {
-  color: #519548;
+  color: #256ead;
   text-shadow: 0.5px 0.5px 0.5px;
   text-decoration: none;
 }
@@ -121,7 +125,7 @@ a:hover {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #eafde6;
+  color: white;
   line-height: 28px;
 }
 
@@ -132,7 +136,7 @@ a:hover {
 }
 
 .orange {
-  background-color: #eafde6;
+  background-color: #e0f1fb;
 }
 
 .white {
@@ -144,20 +148,23 @@ a:hover {
 }
 
 .white-text {
-  font-weight: bold;
-  color: #eafde6;
+  color: white;
   text-align: left;
 }
 
 .title-text {
-  color: #88c425;
+  color: #3c56a2;
   font-size: 16px;
 }
 
 .gray {
-  background-color: #eafde6;
+  background-color: #e0f1fb;
   padding-bottom: 10px;
   clear: both;
+}
+
+.white {
+  background-color: white;
 }
 
 .dark-gray {
@@ -166,7 +173,7 @@ a:hover {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #408fbf;
+  background-color: #74caff;
 }
 
 .flex-box {
@@ -201,7 +208,8 @@ ul {
 img {
   margin: 0 auto;
  /* Centering the page */
-  padding: 0;
+  padding: 20px 0;
+  max-width: 100%;
 }
 
 span {
@@ -210,6 +218,7 @@ span {
 
 #lets-connect {
   text-align: center;
+  color: #e0f1fb;
 }
 
 /* Media queries to handle various device widths */

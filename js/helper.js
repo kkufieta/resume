@@ -27,6 +27,7 @@ var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLprojectYoutube = '<google-youtube video-id="%data%" height="270px" width="480px" rel="0" start="5" fluid="true" autoplay="0"> </google-youtube>';
 
 var HTMLprojectStart = '<div class="project-entry col-sm-6"></div>';
 var HTMLprojectTitle = '<a class="title-text" target="_blank" href="#">%data%</a>';

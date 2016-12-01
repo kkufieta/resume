@@ -7,7 +7,7 @@ var work = {
       'employer': 'Ascending Intelligence Technologies',
       'title': 'Control Systems Engineer',
       'location': 'New York City, USA',
-      'dates': 'October 2015 - Present',
+      'dates': 'October 2015 - December 2015',
       'description': 'Research motion planning control for robots.',
       'url': ''
     },
@@ -15,8 +15,8 @@ var work = {
       'employer': 'asmbld.',
       'title': 'Control Systems Engineer',
       'location': 'New York City, USA',
-      'dates': 'June 2015 - September 2015',
-      'description': 'Implemented of a trajectory generator, central controller and GUI with Python, Kivy & Bash, as well as embedded software control written in Squirrel.',
+      'dates': 'June 2015 - October 2015',
+      'description': 'Implemented a trajectory generator, central controller and GUI with Python, Kivy & Bash, as well as embedded software control written in Squirrel.',
       'url': 'http://asmbld.com/dom-indoors'
     },
     {
@@ -41,7 +41,8 @@ var work = {
       'location': 'Stuttgart Area, Germany',
       'dates': 'January 2010 - May 2010',
       'description': 'Helped in the rapid development and prototyping of the Bionic Handling Assistant that won the German future price in 2010. Designed and implemented the motion and pneumatic control system for the Bionic Handling Assistant.',
-      'url': 'https://www.festo.com/net/supportportal/files/42050/brosch_fc_bha_3_0_en_lo.pdf'
+      'url': 'https://www.festo.com/net/supportportal/files/42050/brosch_fc_bha_3_0_en_lo.pdf',
+      'youtube': 'EeSUPTAz2MM'
     }
   ]
 };
@@ -84,6 +85,10 @@ work.display = function() {
           formattedDescription = HTMLworkDescription.replace('%data%', work[jobs][i].description);
           $('.work-entry:last').append(formattedDescription);
         }
+        if (work[jobs][i].youtube !== undefined && work[jobs][i].youtube !== '') {
+          formattedYoutube = HTMLprojectYoutube.replace('%data%', work[jobs][i].youtube);
+          $('.work-entry:last').append(formattedYoutube);
+        }
       }
     }
   }
@@ -95,49 +100,47 @@ work.display = function() {
 var projects = {
   'projects': [
     {
-      'title': 'Arcade Game Clone',
-      'dates': 'January 2016',
-      'description': 'To be announced.',
-      'images': ['images/front_end/arcade-250-1x.jpg'],
-      'url': '',
-      'youtube': '7Q9ljEXsW7w'
-    }, {
-      'title': 'Feed Reader Testing',
-      'dates': 'May 2016',
-      'description': 'To be announced.',
-      'images': ['images/front_end/testing-250-1x.jpg'],
-      'url': ''
-    }, {
-      'title': 'Health Tracker',
-      'dates': 'April 2016',
-      'description': 'To be announced.',
-      'images': ['images/front_end/kermit-250-1x.jpg'],
-      'url': ''
+      'title': 'CARI - Content Aware Resizing of Images',
+      'dates': 'November 2016',
+      'description': 'Implemented seam carving algorithm (find shortest path in an edge-weighted directed acyclic graph). User can upload and resize images with intuitive drag-&-drop of image borders. Implemented in JavaScript, using Knockout.js, and HTML5 Canvas',
+      'images': ['images/cari.png'],
+      'url': 'https://kkufieta.github.io/cari'
     }, {
       'title': 'Neighborhood Map',
-      'dates': 'March 2016',
-      'description': 'To be announced.',
-      'images': ['images/front_end/map-250-1x.jpg'],
-      'url': ''
+      'dates': 'September 2016',
+      'description': 'Implemented single-page, responsive web application displaying a full-page map that loads with 20 of my favorite locations in NYC.',
+      'images': ['images/neighborhoodmap.png'],
+      'url': 'https://kkufieta.github.io/neighborhoodMap'
+    }, {
+      'title': 'Arcade Game Clone',
+      'dates': 'April 2016',
+      'description': 'Implemented clone of classic game Frogger. Created functionality of the game (Udacity provided art assets and game engine).',
+      'images': ['images/bugs_long.png'],
+      'url': 'https://kkufieta.github.io/arcadeGameBugs/',
+    }, {
+      'title': 'Feed Reader Testing',
+      'dates': 'September 2016',
+      'description': 'Wrote comprehensive unit tests, using the Jasmine testing framework, for an RSS feed reader application that uses Google\'s RSS API.',
+      'images': ['images/testing.png'],
+      'url': 'https://kkufieta.github.io/feedreader'
     }, {
       'title': 'Website Optimization',
-      'dates': 'February 2016',
-      'description': 'To be announced.',
-      'images': ['images/front_end/code-screen-250-1x.jpg'],
-      'url': ''
+      'dates': 'July 2016',
+      'description': 'Optimized critical rendering path of existing webiste to achieve PageSpeed Insights score of above 90. Eliminated inefficiencies in the website\'s scroll animation. Site now scrolls at 60 frames per second.',
+      'images': ['images/weboptimization.png'],
+      'url': 'https://kkufieta.github.io/mobilePortfolio'
     }, {
       'title': 'Portfolio',
       'dates': 'November 2015',
-      'description': 'Designed and implemented my portfolio website.',
-      'images': ['images/front_end/portfolio.jpg'],
-      'url': 'http://katharinaxeniakufieta.github.io/Portfolio/'
+      'description': 'Designed and implemented responsive portfolio website.',
+      'images': ['images/portfolio.png'],
+      'url': 'http://kkufieta.github.io/portfolio/'
     }, {
       'title': 'Force estimation in robotic manipulators: Modeling, Simulation and Experiments',
       'dates': 'January 2014',
       'description': 'Derived and verified an accurate dynamic model for the UR5 manipulator through simulations and experiments with the robot and an accelerometer.',
-      'images': ['images/front_end/robot.jpg'],
-      'url': 'http://folk.ntnu.no/tomgra/Diplomer/Kufieta.pdf',
-      'youtube': 'EeSUPTAz2MM'
+      'images': ['images/robot.png'],
+      'url': 'http://folk.ntnu.no/tomgra/Diplomer/Kufieta.pdf'
     }
   ]
 };
@@ -193,19 +196,19 @@ var bio = {
   'name': 'Katharina Kufieta',
   'role': 'Software Engineer',
   'contacts': {
-    'mobile': '999-999-9999',
-    'email': 'notarealemail@gmail.com',
-    'github': 'https://github.com/KatharinaXeniaKufieta',
+    // 'mobile': '999-999-9999',
+    // 'email': 'notarealemail@gmail.com',
+    'github': 'https://github.com/kkufieta',
     'twitter': 'https://twitter.com/kathikufieta',
     'location': 'New York City',
     'linkedin': 'https://www.linkedin.com/in/katharinakufieta',
     'blog': ''
     },
-  'welcomeMessage': 'When in doubt, break boundaries.',
+  'welcomeMessage': 'Make it and break it.',
   'skills': [
-    'HTML', 'CSS', 'Bootstrap', 'JavaScript', 'JQuery', 'Matlab', 'Simulink', 'R', 'C++', 'Python', 'Squirrel', 'Kivy', 'Bash', 'Git', 'Arduino Uno', 'Electric Imp'
+    'JavaScript', 'HTML5', 'CSS3', 'Python', 'C++', 'Java', 'Matlab', 'Simulink', 'R', 'Squirrel', 'Kivy', 'Git/GitHub', 'Mercurial', 'jQuery', 'Knockout.js', 'Jasmine', 'Bootstrap', 'Materialize', 'Grunt', 'Arduino Uno', 'Electric Imp'
   ],
-  'biopic': 'images/me2.jpg'
+  'biopic': 'images/profilepic.jpg'
 };
 
 /*****************
@@ -291,7 +294,7 @@ var education = {
       'name': 'Norwegian University of Science and Technology',
       'location': 'Trondheim, Norway',
       'degree': 'Exchange student',
-      'majors': ['Control Systems Engineering', 'Unicorn Science'],
+      'majors': ['Control Systems Engineering'],
       'dates': 2014,
       'url': 'http://www.ntnu.no/studier/mttk/'
     }
@@ -300,8 +303,14 @@ var education = {
     {
       'title': 'Front-End Web Developer Nanodegree',
       'school': 'Udacity',
-      'date': 2015,
+      'date': 2016,
       'url': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
+    },
+    {
+      'title': 'Introduction to Algorithms',
+      'school': 'Coursera',
+      'date': 2016,
+      'url': 'https://www.coursera.org/learn/introduction-to-algorithms'
     },
     {
       'title': 'Learning How to Learn: Powerful mental tools to help you master tough subjects',
