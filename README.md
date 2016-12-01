@@ -1,5 +1,5 @@
-## Link to github pages
-[view project here](http://katharinaxeniakufieta.github.io/frontend-nanodegree-resume/)
+# Online Resume
+View the [demo here](http://katharinaxeniakufieta.github.io/frontend-nanodegree-resume/)
 
 ## How do I complete this project?
 
