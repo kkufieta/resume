@@ -1,5 +1,7 @@
 # Online Resume
-View the [demo here](http://katharinaxeniakufieta.github.io/frontend-nanodegree-resume/)
+This project is part of the [Udacity Frontend Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001) and focuses on jQuery and JavaScript. It displays my interactive resume that reads all data from a JSON file and then dynamically modifies the DOM to display the information. This means it is easy to update the resume by adding information to the JSON file. Further customized the project by personalizing the design using CSS.
+
+View the [demo here](http://kkufieta.github.io/resume/)
 
 ## How do I complete this project?
 
@@ -99,3 +101,6 @@ The resume has four distinct sections: work, education, projects and a header wi
 4. All of your code for adding elements to the resume should be within functions. And all of your functions should be encapsulated within the same objects containing your resume data. For instance, your functions for appending work experience elements to the page should be found within the same object containing data about your work experience.
 5. Your resume should also `console.log()` information about click locations. On line 90 in helper.js, you’ll find a jQuery onclick handler that you’ll need to modify to work with the `logClicks(x,y)` function above it.
 6. It’s possible to make additional information show up when you click on the pins in the map. Check out line 174 in helper.js and the Google Maps API to get started.
+
+## Author
+Most of the JavaScript and CSS is written by [Katharina Kufieta](https://www.linkedin.com/in/katharinakufieta).
