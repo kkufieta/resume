@@ -1,19 +1,7 @@
 # Online Resume
 This project is part of the [Udacity Frontend Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001) and focuses on jQuery and JavaScript. It displays my interactive resume that reads all data from a JSON file and then dynamically modifies the DOM to display the information. This means it is easy to update the resume by adding information to the JSON file. Further customized the project by personalizing the design using CSS.
 
-## How do I complete this project?
-
-1. Go to the [Javascript Basics course](https://www.udacity.com/course/ud804) and select "View Course Materials."
-2. Go through the videos and assignments in this course to learn the JavaScript necessary to build your resume.
-3. Review your work against the Project Rubric (on the next page).
-4. When you are satisfied with your project, submit it according to the Submission Instructions on the next page.
-
-### By the end:
-Your resume will look something like this
-![](http://i.imgur.com/pWU1Xbl.png)
-
-And your repository will include the following files:
-
+## Files
 * **index.html**: The main HTML document. Contains links to all of the CSS and JS resources needed to render the resume, including resumeBuilder.js.
 * **js/helper.js**: Contains helper code needed to format the resume and build the map. It also has a few function shells for additional functionality. More on helper.js further down.
 * **js/resumeBuilder.js**: This file is empty. You should write your code here.
@@ -23,7 +11,6 @@ And your repository will include the following files:
 The GitHub readme file.
 * and some images in the images directory.
 
-## Your starting point...
 ### js/helper.js
 Within helper.js, you’ll find a large collection of strings containing snippets of HTML. Within many snippets, you’ll find placeholder data in the form of `%data%` or `%contact%`.
 
