@@ -1,8 +1,6 @@
 # Online Resume
 This project is part of the [Udacity Frontend Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001) and focuses on jQuery and JavaScript. It displays my interactive resume that reads all data from a JSON file and then dynamically modifies the DOM to display the information. This means it is easy to update the resume by adding information to the JSON file. Further customized the project by personalizing the design using CSS.
 
-View the [demo here](http://kkufieta.github.io/resume/)
-
 ## How do I complete this project?
 
 1. Go to the [Javascript Basics course](https://www.udacity.com/course/ud804) and select "View Course Materials."
